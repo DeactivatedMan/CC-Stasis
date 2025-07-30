@@ -56,5 +56,6 @@ if not fs.exists("client.lua") and not fs.exists("startup.lua") then
     end
     file.close()
     shell.run("rename client.lua startup.lua")
+    os.setComputerLabel("Teleporter")
     shell.run("reboot")
 end

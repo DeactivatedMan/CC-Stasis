@@ -38,5 +38,6 @@ if not fs.exists("server.lua") and not fs.exists("startup.lua") then
     shell.run("wget https://raw.githubusercontent.com/DeactivatedMan/CC-Stasis/refs/heads/"..branch.."/Server/server.lua")
 
     shell.run("rename server.lua startup.lua")
+    os.setComputerLabel("Teleporter Server")
     shell.run("reboot")
 end
