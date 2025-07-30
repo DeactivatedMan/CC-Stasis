@@ -23,7 +23,7 @@ end
 
 local branch = settings.get("branch.setting", "main")
 
-if true then --not fs.exists("server.lua") and not fs.exists("startup.lua") then
+if not fs.exists("server.lua") and not fs.exists("startup.lua") then
     local branch = readWithTimeout(10, "main")
     settings.define("branch.setting", {
         description = "Which branch CC-Storage is using",

@@ -8,7 +8,6 @@ rednet.open("left")
 --  read documentation (https://tweaked.cc/) for more help
 
 local idRelay = {
-    [20] = {"0", "left"}
 }
 
 write("Home ID is "..os.computerID())
