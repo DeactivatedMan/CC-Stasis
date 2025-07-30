@@ -24,6 +24,7 @@ end
 local branch = settings.get("branch.setting", "main")
 
 if not fs.exists("server.lua") and not fs.exists("startup.lua") then
+    write("\nEnter current branch\n > ")
     local branch = readWithTimeout(10, "main")
     settings.define("branch.setting", {
         description = "Which branch CC-Storage is using",
@@ -33,7 +34,7 @@ if not fs.exists("server.lua") and not fs.exists("startup.lua") then
     settings.set("branch.setting", branch)
 
     write("\n\nREQUIRED FOR SYNC:\nThis home is ID "..os.computerID().."\n\nPlease note that you will have to edit the downloaded file to add other devices\n\n")
-    
+    sleep(5)
     shell.run("wget https://raw.githubusercontent.com/DeactivatedMan/CC-Stasis/refs/heads/"..branch.."/Server/server.lua")
 
     shell.run("rename server.lua startup.lua")
